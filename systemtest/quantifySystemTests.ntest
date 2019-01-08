@@ -1,0 +1,321 @@
+# -*-Perl-*-
+
+# quantifySystemTests.ntest -
+#
+# ECQuantify
+#
+# Copyright (c) 2005-2010 Electric Cloud, Inc.
+# All rights reserved
+
+use strict;
+use warnings;
+use ECTest;
+use ECSelenium;
+
+ 
+# system tests
+
+
+require "$::gTestFileDir/quantify-common.ntest";
+
+$::gProjectImported = 0;
+$::gtestProjectName = 'QuantifyTestProject';
+
+my $outcome = '';
+
+########################################################################
+# importProject - imports the test project and asserts that the specified
+#                 procedures exists
+#
+# Arguments:
+#   -none
+#
+# Returns:
+#   -nothing
+#
+########################################################################
+sub importProject() {
+ 
+    #assert project exists and is imported
+    assertOK($::N->import(
+             { file =>"$::gTestFileDir/quantifySystemTests.xml",
+               path  => "/projects/QuantifyTestProject",
+               force => 1
+             } ), 'runCommandLine could not be imported');
+   
+   #assert all given procedures exist
+   
+    assertOK($::N->getProcedure($::gtestProjectName, 'executeQuantifyForDotNet'),
+    'executeQuantifyForDotNet procedure doesn\'t exist');
+    
+    assertOK($::N->getProcedure($::gtestProjectName, 'executeQuantifyWithAllOptions'),
+    'executeQuantifyWithAllOptions procedure doesn\'t exist');
+    
+    assertOK($::N->getProcedure($::gtestProjectName, 'executeQuantifyWithDefaultLog'),
+    'executeQuantifyWithDefaultLog procedure doesn\'t exist'); 
+
+    assertOK($::N->getProcedure($::gtestProjectName, 'executeQuantifyWithRequiredOptions'),
+    'executeQuantifyWithRequiredOptions procedure doesn\'t exist');
+    
+    assertOK($::N->getProcedure($::gtestProjectName, 'executeQuantifyWithAllChecks'),
+    'executeQuantifyWithAllChecks procedure doesn\'t exist');
+    
+    $::gProjectImported = 1;
+}
+
+########################################################################
+# doSetup - invokes the project import method in case it hasn't been 
+#           executed
+#
+# Arguments:
+#   -none
+#
+# Returns:
+#   -nothing
+#
+########################################################################
+sub doSetup() {
+
+    if(! $::gProjectImported) {
+        importProject();
+    }
+    
+    
+}
+
+ntest "executeQuantifyForDotNet", {}, sub {
+      
+      doSetup();
+      
+      # run test job
+     
+      my $xpath = $::N->runProcedure($::gtestProjectName, 
+              {procedureName => "executeQuantifyForDotNet",
+              pollInterval  => '1',
+              timeout => 600,
+                   actualParameter => [
+                  
+                  ]
+      });
+          
+       
+      # make sure it finished
+      my $jobId = 0;
+      my $status = '';
+      
+      assertOK($xpath, 'runProcedure has errors');
+      if ($xpath) {
+          $jobId  = $xpath->findvalue("//jobId");
+          $status = $xpath->findvalue("//status");
+          $outcome = $xpath->findvalue("//outcome");
+  
+          assertTrue($jobId && $jobId ne "",'valid job id');
+          assertEq('completed',$status,"job $jobId complete");
+  
+          #abort if job did not finish
+          if ($status ne 'completed') {
+              assertOK($::N->abortJob($jobId, {force => 1}));
+          }
+      }
+
+      # get the job details
+      $xpath = $::N->getJobDetails($jobId);
+   
+      # get the value of the commands lines
+      my $commandLine = $xpath->findvalue("//property[propertyName='commandLine']/value");
+
+
+      assertEq($commandLine, '"Quantify" -Run=no -Replace=no -net "C:\Program Files\IBM\RationalPurifyPlus\PurifyPlus\Samples\Quantify\hello.exe"', 
+           'command line doesn\'t match expected output');
+           
+
+
+  };
+  
+ntest "executeQuantifyWithAllOptions", {}, sub {
+      
+      doSetup();
+      
+      # run test job
+     
+      my $xpath = $::N->runProcedure($::gtestProjectName, 
+              {procedureName => "executeQuantifyWithAllOptions",
+              pollInterval  => '1',
+              timeout => 600,
+                   actualParameter => [
+                  
+                  ]
+      });
+          
+       
+      # make sure it finished
+      my $jobId = 0;
+      my $status = '';
+      
+      assertOK($xpath, 'runProcedure has errors');
+      if ($xpath) {
+          $jobId  = $xpath->findvalue("//jobId");
+          $status = $xpath->findvalue("//status");
+          $outcome = $xpath->findvalue("//outcome");
+  
+          assertTrue($jobId && $jobId ne "",'valid job id');
+          assertEq('completed',$status,"job $jobId complete");
+  
+          #abort if job did not finish
+          if ($status ne 'completed') {
+              assertOK($::N->abortJob($jobId, {force => 1}));
+          }
+      }
+
+      # get the job details
+      $xpath = $::N->getJobDetails($jobId);
+   
+      # get the value of the commands lines
+      my $commandLine = $xpath->findvalue("//property[propertyName='commandLine']/value");
+      my $workingDir = $xpath->findvalue("//property[propertyName='workingdir']/value");
+
+      assertEq($commandLine, '"Quantify" -ShowLoadLibraryProgress=yes -Run=yes -Replace=yes -CollectionGranularity=time -QuantifyClassesIncludeMust=*xyz -QuantifyClassesExcludeMust=abc* "C:\Program Files\IBM\RationalPurifyPlus\PurifyPlus\Samples\Quantify\hello.exe" -SaveData reportData.qfy' , 
+           ' command line doesn\'t match expected output');
+           
+      assertEq($workingDir, 'myworkingdir', 
+           'working directory doesn\'t match expected output');
+
+  };
+  
+  ntest "executeQuantifyWithDefaultLog", {}, sub {
+      
+      doSetup();
+      
+      # run test job
+     
+      my $xpath = $::N->runProcedure($::gtestProjectName, 
+              {procedureName => "executeQuantifyWithDefaultLog",
+              pollInterval  => '1',
+              timeout => 600,
+                   actualParameter => [
+                  
+                  ]
+      });
+          
+       
+      # make sure it finished
+      my $jobId = 0;
+      my $status = '';
+      
+      assertOK($xpath, 'runProcedure has errors');
+      if ($xpath) {
+          $jobId  = $xpath->findvalue("//jobId");
+          $status = $xpath->findvalue("//status");
+          $outcome = $xpath->findvalue("//outcome");
+  
+          assertTrue($jobId && $jobId ne "",'valid job id');
+          assertEq('completed',$status,"job $jobId complete");
+  
+          #abort if job did not finish
+          if ($status ne 'completed') {
+              assertOK($::N->abortJob($jobId, {force => 1}));
+          }
+      }
+
+      # get the job details
+      $xpath = $::N->getJobDetails($jobId);
+   
+      # get the value of the command line
+      my $commandLine = $xpath->findvalue("//property[propertyName='commandLine']/value");
+
+      assertEq($commandLine, '"Quantify" -Run=no -Replace=no "C:\Program Files\IBM\RationalPurifyPlus\PurifyPlus\Samples\Quantify\hello.exe"', 
+           ' command line doesn\'t match expected output');
+
+  };
+  
+  ntest "executeQuantifyWithRequiredOptions", {}, sub {
+      
+      doSetup();
+      
+      # run test job
+     
+      my $xpath = $::N->runProcedure($::gtestProjectName, 
+              {procedureName => "executeQuantifyWithRequiredOptions",
+              pollInterval  => '1',
+              timeout => 600,
+                   actualParameter => [
+                  
+                  ]
+      });
+          
+       
+      # make sure it finished
+      my $jobId = 0;
+      my $status = '';
+      
+      assertOK($xpath, 'runProcedure has errors');
+      if ($xpath) {
+          $jobId  = $xpath->findvalue("//jobId");
+          $status = $xpath->findvalue("//status");
+          $outcome = $xpath->findvalue("//outcome");
+  
+          assertTrue($jobId && $jobId ne "",'valid job id');
+          assertEq('completed',$status,"job $jobId complete");
+  
+          #abort if job did not finish
+          if ($status ne 'completed') {
+              assertOK($::N->abortJob($jobId, {force => 1}));
+          }
+      }
+
+      # get the job details
+      $xpath = $::N->getJobDetails($jobId);
+   
+      # get the value of the command line
+      my $commandLine = $xpath->findvalue("//property[propertyName='commandLine']/value");
+
+      assertEq($commandLine, '"Quantify" -Run=no -Replace=no "C:\Program Files\IBM\RationalPurifyPlus\PurifyPlus\Samples\Quantify\hello.exe"', 
+           ' command line doesn\'t match expected output');
+
+  };
+  
+  ntest "executeQuantifyWithAllChecks", {}, sub {
+      
+      doSetup();
+      
+      # run test job
+     
+      my $xpath = $::N->runProcedure($::gtestProjectName, 
+              {procedureName => "executeQuantifyWithAllChecks",
+              pollInterval  => '1',
+              timeout => 600,
+                   actualParameter => [
+                  
+                  ]
+      });
+          
+       
+      # make sure it finished
+      my $jobId = 0;
+      my $status = '';
+      
+      assertOK($xpath, 'runProcedure has errors');
+      if ($xpath) {
+          $jobId  = $xpath->findvalue("//jobId");
+          $status = $xpath->findvalue("//status");
+          $outcome = $xpath->findvalue("//outcome");
+  
+          assertTrue($jobId && $jobId ne "",'valid job id');
+          assertEq('completed',$status,"job $jobId complete");
+  
+          #abort if job did not finish
+          if ($status ne 'completed') {
+              assertOK($::N->abortJob($jobId, {force => 1}));
+          }
+      }
+
+      # get the job details
+      $xpath = $::N->getJobDetails($jobId);
+   
+      # get the value of the command line
+      my $commandLine = $xpath->findvalue("//property[propertyName='commandLine']/value");
+
+      assertEq($commandLine, '"Quantify" -Run=yes -Replace=yes -net "C:\Program Files\IBM\RationalPurifyPlus\PurifyPlus\Samples\Quantify\hello.exe"', 
+           ' command line doesn\'t match expected output');
+
+  };

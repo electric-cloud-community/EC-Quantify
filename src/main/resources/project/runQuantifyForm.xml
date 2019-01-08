@@ -1,0 +1,115 @@
+    <editor>
+        <help>/commander/pages/@PLUGIN_NAME@/@PLUGIN_KEY@_help?s=Administration&amp;ss=Plugins#runQuantify</help>
+		<formElement>
+            <type>entry</type>
+            <label>Rational Quantify executable path:</label>
+            <property>quantifypath</property>
+            <value>Quantify</value>
+            <required>1</required>
+            <documentation>Provide the absolute path of the Quantify executable. The default value assumes Quantify is loaded in the system path.</documentation>
+        </formElement>
+		
+		<formElement>
+            <type>entry</type>
+            <label>Target to analyze:</label>
+            <property>target</property>
+            <required>1</required>
+            <documentation>Provide the absolute path to the element to analyze.</documentation>
+        </formElement>
+        
+        <formElement>
+            <type>select</type>
+            <label>Collection Granularity:</label>
+            <property>granularity</property>
+            <required>0</required>
+            <documentation>Select the type of measurement (line, function, or time) you want Quantify to use to collect data. The measurement type applies to all modules in the program (except those in the Windows directories, to which the /TimeSystemDir option can apply).</documentation>
+            <option><name>Line</name><value>line</value></option>
+            <option><name>Function</name><value>function</value></option>
+            <option><name>Time</name><value>time</value></option>
+        </formElement>
+        
+        <formElement>
+            <type>entry</type>
+            <label>Classes to Exclude:</label>
+            <property>excludedclasses</property>
+            <required>0</required>
+            <documentation>Indicate the .NET classes to exclude from memory profiling. Quantify collects memory profiling data for all classes except classes whose fully qualified name contains a character string that matches a value in the argument list.</documentation>
+        </formElement>
+        
+        <formElement>
+            <type>entry</type>
+            <label>Classes to Include:</label>
+            <property>includedclasses</property>
+            <required>0</required>
+            <documentation>Indicate the .NET classes to profile. Quantify collects memory profiling data for only those classes whose fully qualified name contains a character string that matches a value in the argument list. All other classes are excluded.</documentation>
+        </formElement>
+        
+        <formElement>
+            <type>checkbox</type>
+            <label>Run Application:</label>
+            <property>run</property>
+            <checkedValue>1</checkedValue>
+            <uncheckedValue>0</uncheckedValue>
+            <required>0</required>
+            <documentation>If checked, this instruments a program or module without running it.</documentation>
+        </formElement>        
+        
+        <formElement>
+            <type>checkbox</type>
+            <label>Replace:</label>
+            <property>replace</property>
+            <checkedValue>1</checkedValue>
+            <uncheckedValue>0</uncheckedValue>
+            <required>0</required>
+            <documentation>
+            If checked, this instruments and runs the executable in place, rather than store the instrumented version in the cache directory. Before instrumenting the executable, a backup copy is created (Exename.exe.original) and saved in the same directory as the original executable. Use this option to run a test script or batch file using the instrumented program.
+            </documentation>
+        </formElement>        
+
+        <formElement>
+            <type>checkbox</type>
+            <label>.NET Managed Application:</label>
+            <property>net</property>
+            <checkedValue>1</checkedValue>
+            <uncheckedValue>0</uncheckedValue>
+            <required>0</required>
+            <documentation>If checked, this indicates analysis will run a .NET managed application.</documentation>
+        </formElement>
+
+        <formElement>
+            <type>select</type>
+            <label>Result file type:</label>
+            <property>resultfile</property>
+            <required>0</required>
+            <documentation>Select the type of archive for the log.</documentation>
+            <option><name>Default</name><value>default</value></option>
+            <option><name>Text</name><value>text</value></option>
+            <option><name>Quantify data file</name><value>qfy</value></option>
+        </formElement>
+        
+        <formElement>
+            <type>entry</type>
+            <label>Result filename:</label>
+            <property>resultname</property>
+            <required>0</required>
+            <documentation>Provide the filename for the resulting log file.</documentation>
+        </formElement>        
+        
+        <formElement>
+            <type>textarea</type>
+            <label>Additional Commands:</label>
+            <property>additionalcommands</property>
+            <required>0</required>
+            <documentation>Provide any additional commands to execute for Quantify.</documentation>
+        </formElement>
+
+         <formElement>
+            <type>entry</type>
+            <label>Working directory:</label>
+            <property>workingdir</property>
+            <required>0</required>
+            <value></value>
+            <documentation>Indicate the desired working directory. Leave blank to use the default workspace.</documentation>
+        </formElement>
+
+    </editor>

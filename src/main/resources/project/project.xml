@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exportedData version="39" buildLabel="" buildVersion="3.5.0.0">
+  <exportPath>/projects/@PLUGIN_KEY@-@PLUGIN_VERSION@</exportPath>
+  <project>
+    <projectName>@PLUGIN_KEY@-@PLUGIN_VERSION@</projectName>
+    <propertySheet>
+
+      <property>
+        <propertyName>scripts</propertyName>
+        <description></description>
+        <propertySheet>
+          <property>
+            <propertyName>quantifyDriver</propertyName>
+            <description></description>
+            <expandable>1</expandable>
+            <value></value>
+          </property>
+        </propertySheet>
+      </property>
+           
+      <property>
+        <propertyName>ec_setup</propertyName>
+        <value></value>
+        <expandable>0</expandable>
+      </property>
+      
+      <property>
+        <propertyName>postp_matchers</propertyName>
+        <value></value>
+        <expandable>0</expandable>
+      </property>
+      
+      <property>
+        <propertyName>ec_visibility</propertyName>
+        <description></description>
+        <expandable>1</expandable>
+        <value>pickListOnly</value>
+      </property>        
+      
+	</propertySheet>
+
+    <procedure>
+      <procedureName>runQuantify</procedureName>
+      <description>Executes Quantify</description>
+      <jobNameTemplate></jobNameTemplate>
+      <resourceName></resourceName>
+      <workspaceName></workspaceName>
+      <projectName>EC-Quantify</projectName>
+      <propertySheet>
+        <property>
+          <propertyName>ec_customEditorData</propertyName>
+          <propertySheet>
+            <property>
+              <propertyName>parameters</propertyName>
+              
+              <propertySheet>
+              
+              	<property>
+                  <propertyName>workingdir</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                <property>
+                  <propertyName>resultname</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>                
+                
+                <property>
+                  <propertyName>quantifypath</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                <property>
+                  <propertyName>target</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>                
+
+                <property>
+                  <propertyName>includedclasses</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                <property>
+                  <propertyName>excludedclasses</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>                
+                
+                <property>
+                  <propertyName>additionalcommands</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                <property>
+                  <propertyName>resultfile</propertyName>
+                  <propertySheet>
+                    
+                    <property>
+                      <propertyName>options</propertyName>
+                      <propertySheet>
+                        <property>
+                          <propertyName>option1</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>Default</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>default</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        
+                        <property>
+                          <propertyName>option2</propertyName>
+                          
+                          <propertySheet>
+                            
+                            <property>
+                              <propertyName>text</propertyName>                              
+                              <value>Text</value>
+                            </property>
+                            
+                            <property>
+                              <propertyName>value</propertyName>
+                              <owner>admin</owner>
+                              <value>text</value>
+                            </property>
+                            
+                          </propertySheet>
+                        </property>
+                        
+                        <property>
+                          <propertyName>option3</propertyName>
+                          
+                          <propertySheet>
+                            
+                            <property>
+                              <propertyName>text</propertyName>                              
+                              <value>Quantify data file</value>
+                            </property>
+                            
+                            <property>
+                              <propertyName>value</propertyName>
+                              <owner>admin</owner>
+                              <value>qfy</value>
+                            </property>
+                            
+                          </propertySheet>
+                        </property>                        
+                       
+                       <property>
+                          <propertyName>optionCount</propertyName>
+                          <expandable>1</expandable>
+                          <value>3</value>
+                        </property>
+                        
+                        <property>
+                          <propertyName>type</propertyName>
+                          <expandable>1</expandable>
+                          <value>list</value>
+                        </property> 
+                        
+                        </propertySheet>
+                        </property>
+                    </propertySheet>
+                </property> 
+                
+                <property>
+                  <propertyName>granularity</propertyName>
+                  <propertySheet>
+                    
+                    <property>
+                      <propertyName>options</propertyName>
+                      <propertySheet>
+                        <property>
+                          <propertyName>option1</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>Time</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>time</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        
+                        <property>
+                          <propertyName>option2</propertyName>
+                          
+                          <propertySheet>
+                            
+                            <property>
+                              <propertyName>text</propertyName>                              
+                              <value>Line</value>
+                            </property>
+                            
+                            <property>
+                              <propertyName>value</propertyName>
+                              <owner>admin</owner>
+                              <value>line</value>
+                            </property>
+                            
+                          </propertySheet>
+                        </property>
+
+                        <property>
+                          <propertyName>option3</propertyName>
+                          
+                          <propertySheet>
+                            
+                            <property>
+                              <propertyName>text</propertyName>                              
+                              <value>function</value>
+                            </property>
+                            
+                            <property>
+                              <propertyName>value</propertyName>
+                              <owner>admin</owner>
+                              <value>function</value>
+                            </property>
+                            
+                          </propertySheet>
+                        </property>                          
+                        
+                       <property>
+                          <propertyName>optionCount</propertyName>
+                          <expandable>1</expandable>
+                          <value>3</value>
+                        </property>
+                        
+                        <property>
+                          <propertyName>type</propertyName>
+                          <expandable>1</expandable>
+                          <value>list</value>
+                        </property> 
+                        
+                        </propertySheet>
+                        </property>
+                    </propertySheet>
+                </property>
+                
+                <property>
+                    
+                  <propertyName>run</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>checkedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>1</value>
+                    </property>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                    <property>
+                      <propertyName>initiallyChecked</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                    <property>
+                      <propertyName>uncheckedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                <property>
+                    
+                  <propertyName>replace</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>checkedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>1</value>
+                    </property>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                    <property>
+                      <propertyName>initiallyChecked</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                    <property>
+                      <propertyName>uncheckedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                  </propertySheet>
+                </property>                
+                
+                <property>
+                    
+                  <propertyName>net</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>checkedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>1</value>
+                    </property>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                    <property>
+                      <propertyName>initiallyChecked</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                    <property>
+                      <propertyName>uncheckedValue</propertyName>
+                      <expandable>1</expandable>
+                      <value>0</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                
+                
+              </propertySheet>
+              
+            </property>
+          </propertySheet>
+        </property>
+
+		<property>
+                    <propertyName>ec_parameterForm</propertyName>
+                    <description></description>
+                    <expandable>0</expandable>
+                    <value></value>
+                </property>
+      </propertySheet>
+      
+	  <formalParameter>
+        <formalParameterName>quantifypath</formalParameterName>
+        <description>Provide the absolute path of the Quantify executable. The default value assumes Quantify is loaded in the system path.</description>
+        <defaultValue>Quantify</defaultValue>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>target</formalParameterName>
+        <description>Provide the absolute path to the element to analyze.</description>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>granularity</formalParameterName>
+        <description>Select the type of measurement (line, function, or time) you want Quantify to use to collect data. The measurement type applies to all modules in the program (except those in the Windows directories, to which the /TimeSystemDir option can apply).</description>
+        <required>0</required>
+        <type>select</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>excludedclasses</formalParameterName>
+        <description>Indicate the .NET classes to exclude from memory profiling. Quantify collects memory profiling data for all classes except classes whose fully qualified name contains a character string that matches a value in the argument list.</description>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter>
+
+      <formalParameter>
+        <formalParameterName>includedclasses</formalParameterName>
+        <description>Indicate the .NET classes to profile. Quantify collects memory profiling data for only those classes whose fully qualified name contains a character string that matches a value in the argument list. All other classes are excluded.</description>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>run</formalParameterName>
+        <defaultValue></defaultValue>
+        <description>If checked, this instruments a program or module without running it.</description>
+        <required>0</required>
+        <type>checkbox</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>replace</formalParameterName>
+        <defaultValue></defaultValue>
+        <description>If checked, this instruments and runs the executable in place, rather than store the instrumented version in the cache directory. Before instrumenting the executable, a backup copy is created (Exename.exe.original) and saved in the same directory as the original executable. Use this option to run a test script or batch file using the instrumented program.</description>
+        <required>0</required>
+        <type>checkbox</type>
+      </formalParameter> 
+      
+      <formalParameter>
+        <formalParameterName>net</formalParameterName>
+        <defaultValue></defaultValue>
+        <description>If checked, this indicates analysis will run a .NET managed application.</description>
+        <required>0</required>
+        <type>checkbox</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>resultfile</formalParameterName>
+        <description>Select the type of archive for the log.</description>
+        <required>0</required>
+        <type>select</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>resultname</formalParameterName>
+        <description>Provide the filename for the resulting log file.</description>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter> 
+      
+      <formalParameter>
+        <formalParameterName>additionalcommands</formalParameterName>
+        <defaultValue></defaultValue>
+        <description>Provide any additional commands to execute for Quantify.</description>
+        <required>0</required>
+        <type>textarea</type>
+      </formalParameter>
+	  
+	  <formalParameter>
+        <formalParameterName>workingdir</formalParameterName>
+        <defaultValue></defaultValue>
+        <description>Indicate the desired working directory. Leave blank to use the default workspace.</description>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter>
+      
+      <step>
+        <stepName>createCommandLine</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>$[/projects/$[/plugins/EC-Quantify/projectName]/scripts/quantifyDriver];</command>
+        <condition></condition>
+        <description></description>
+        <errorHandling>failProcedure</errorHandling>
+        <exclusive>0</exclusive>
+        <logFileName></logFileName>
+        <parallel>0</parallel>
+        <postProcessor></postProcessor>
+        <releaseExclusive>0</releaseExclusive>
+        <resourceName></resourceName>
+        <retries>0</retries>
+        <shell>ec-perl</shell>
+        <timeLimit></timeLimit>
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <workingDirectory></workingDirectory>
+        <workspaceName></workspaceName>
+        <procedureName>runQuantify</procedureName>
+        <projectName>EC-Quantify</projectName>
+        <propertySheet>
+          <property>
+            <propertyName>ec_customEditorData</propertyName>
+            <propertySheet>
+              <property>
+                <propertyName>formType</propertyName>
+                <expandable>1</expandable>
+                <value>command</value>
+              </property>
+            </propertySheet>
+          </property>
+        </propertySheet>
+      </step>
+      
+      <step>
+        <stepName>runCommandLine</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>$[/myCall/commandLine]</command>
+        <condition></condition>
+        <description></description>
+        <errorHandling>failProcedure</errorHandling>
+        <exclusive>0</exclusive>
+        <logFileName></logFileName>
+        <parallel>0</parallel>
+        <postProcessor>postp --loadProperty /myProject/postp_matchers</postProcessor>
+        <releaseExclusive>0</releaseExclusive>
+        <resourceName></resourceName>
+        <retries>0</retries>
+        <shell></shell>
+        <timeLimit></timeLimit>
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <workingDirectory>$[/myCall/workingdir]</workingDirectory>
+        <workspaceName>default</workspaceName>
+        <procedureName>runQuantify</procedureName>
+        <projectName>EC-Quantify</projectName>
+        <propertySheet>
+          <property>
+            <propertyName>ec_customEditorData</propertyName>
+            <propertySheet>
+              <property>
+                <propertyName>formType</propertyName>
+                <expandable>1</expandable>
+                <value>command</value>
+              </property>
+            </propertySheet>
+          </property>
+        </propertySheet>
+      </step>
+    </procedure>
+  </project>
+</exportedData>

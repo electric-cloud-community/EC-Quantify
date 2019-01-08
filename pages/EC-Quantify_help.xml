@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta name="generator" content=
+        "HTML Tidy for Windows (vers 25 March 2009), see www.w3.org" />
+        <meta content="text/html; charset=us-ascii" http-equiv=
+        "content-type" />
+        <title>ElectricFlow Plugin for Quantify</title>
+        <link rel="stylesheet" href=
+        "../../plugins/@PLUGIN_KEY@/pluginhelp.css" type="text/css" media=
+        "screen" />
+    </head>
+    <body>
+        <div class="help">
+            <h1 class="pluginname">Quantify</h1>
+            <p>Plugin Version @PLUGIN_VERSION@</p>
+            <hr style=
+            "margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;"
+            noshade="noshade" />
+			
+			
+            <p>July 1, 2015</p>
+           
+            <p> Rational Quantify locates performance issues and bottlenecks in
+      Visual C++, VisualBasic, and Java programs. Quantify delivers accurate,
+      repeatable timing data for all of your program's components.</p>
+           
+            <h2>Quantify Links</h2>
+            <p>More information can be found at <a href=
+            "http://www.ts.mah.se/RUP/RationalUnifiedProcess/toolment/vqtfy/tm_vqtfyu.htm#Step1">Run a program under Quantify</a>.</p>
+           
+            <h2>ElectricFlow Integration to Quantify</h2>
+            <p>@PLUGIN_KEY@ plugin calls the Quantify tool via command line
+            and passes the user-provided parameters.</p>
+       
+            <p>@PLUGIN_KEY@ plugin allows the testing of source code performance.</p>
+           
+            <p>ElectricFlow itself provides some advantages like
+            parameters checking, easy functionality selection using only check
+            boxes, combo buttons, historical log reports, procedure duration
+            statistics, simple credentials attachment, real time analysis of
+            the log been generated, among others.</p>
+           
+            <h2>Integrated Version</h2>
+            <p> This plugin was developed and tested with Quantify version 7.0.1.0.</p>
+           
+            <h1>Plugin Procedures</h1>
+            <p>IMPORTANT: For all parameter descriptions below, required
+            parameters are shown in <span class='required'>bold
+            italics</span>.</p>
+
+        <div id="runQuantify"><a name='runQuantify' id="runQuantify"></a>
+       
+            <h3>runQuantify</h3>
+            <p>Executes Quantify.</p>
+            <table class="grid">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class='required'>Rational Quantify executable path</td>
+                        <td>Provide the absolute path of the Quantify executable. The default value assumes Quantify is loaded in the system path. (Required)</td>
+                    </tr>
+					<tr>
+                        <td class='required'>Target to analyze</td>
+                        <td>Provide the absolute path to the element to analyze. (Required)</td>
+                    </tr>
+                    <tr>
+                        <td>Collection Granularity</td>
+                        <td>Select the type of measurement (line, function, or time) you want Quantify to use to collect data. The measurement type applies to all modules in the program (except those in the Windows directories, to which the /TimeSystemDir option can apply).</td>
+                        <tr>
+                        <td>Classes to Exclude</td>
+                        <td>Indicate the .NET classes to exclude from memory profiling. Quantify collects memory profiling data for all classes except classes whose fully qualified name contains a character string that matches a value in the argument list.</td>
+                    </tr>
+                    <tr>
+                        <td>Classes to Include</td>
+                        <td>Indicate the .NET classes to profile. Quantify collects memory profiling data for only those classes whose fully qualified name contains a character string that matches a value in the argument list. All other classes are excluded.</td>
+                    </tr>
+                    <tr>
+                        <td>Run Application</td>
+                        <td>If checked, this instruments a program or module without running it.</td>
+                    </tr>
+                    <tr>
+                        <td>Replace</td>
+                        <td>If checked, this instruments and runs the executable in place, rather than store the instrumented version in the cache directory. Before instrumenting the executable, a backup copy is created (Exename.exe.original) and saved in the same directory as the original executable. Use this option to run a test script or batch file using the instrumented program.</td>
+                    </tr>
+                    <tr>
+                        <td>.NET Managed Application)</td>
+                        <td>If checked, this indicates analysis will run a .NET managed application.</td>
+                    </tr>
+                    <tr>
+                        <td>Result file type</td>
+                        <td>Select the type of archive for the log.</td>
+                    </tr>
+                    <tr>
+                        <td>Result filename</td>
+                        <td>Provide the filename for the resulting log file.</td>
+                    </tr>
+                    <tr>
+                        <td>Additional Commands</td>
+                        <td>Provide any additional commands to execute for Quantify.</td>
+                    </tr>
+                    <tr>
+                        <td>Working directory</td>
+                        <td>Indicate the desired working directory. Leave blank to use the default workspace.</td>
+                    </tr>
+                   
+                    </tr>
+                </tbody>
+            </table>
+			<img src="../../plugins/@PLUGIN_KEY@/images/Quantify-1.png" alt=
+			"form" />
+        </div>
+       
+        <h1>Release Notes</h1>
+		
+		<h2>@PLUGIN_KEY@ 1.0.6</h2>
+		<ul>
+			<li>Renamed ElectricCommander to ElectricFlow.</li>
+		</ul> 
+	
+	<h2>@PLUGIN_KEY@-1.0.5</h2>
+           <ul>
+                <li>Fixed manifest file.</li>
+           </ul>       
+	<h2>@PLUGIN_KEY@-1.0.4</h2>
+            <ul>
+                <li>4.1 XML parameters panels ready.</li>
+		<li>New Step Chooser ready.</li>
+            </ul>
+	   
+	   <h2>@PLUGIN_KEY@-1.0.3</h2>
+            <ul>
+                <li>Plugin converted into the new maven format.</li>
+            </ul>
+	   
+        <h2>@PLUGIN_KEY@-1.0.2</h2>
+            <ul>
+                <li>4.1 help page format ready.</li>
+            </ul>
+			
+		<h2>@PLUGIN_KEY@-1.0.1</h2>
+            <ul>
+                <li>Bug Fixing.</li>
+            </ul>
+        </div>
+    </body>
+</html>
