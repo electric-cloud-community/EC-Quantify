@@ -113,41 +113,40 @@
                     </tr>
                 </tbody>
             </table>
-			<img src="../../plugins/@PLUGIN_KEY@/images/Quantify-1.png" alt=
-			"form" />
+			<img src="../../plugins/@PLUGIN_KEY@/images/Quantify-1.png" alt="form" />
         </div>
        
         <h1>Release Notes</h1>
-		
+		<h2>@PLUGIN_KEY@ 1.0.7</h2>
+        <ul>
+            <li>Added metadata that is required for 9.0 release.</li>
+        </ul>
 		<h2>@PLUGIN_KEY@ 1.0.6</h2>
 		<ul>
 			<li>Renamed ElectricCommander to ElectricFlow.</li>
 		</ul> 
 	
-	<h2>@PLUGIN_KEY@-1.0.5</h2>
-           <ul>
-                <li>Fixed manifest file.</li>
-           </ul>       
-	<h2>@PLUGIN_KEY@-1.0.4</h2>
-            <ul>
-                <li>4.1 XML parameters panels ready.</li>
-		<li>New Step Chooser ready.</li>
-            </ul>
-	   
-	   <h2>@PLUGIN_KEY@-1.0.3</h2>
-            <ul>
-                <li>Plugin converted into the new maven format.</li>
-            </ul>
-	   
+	    <h2>@PLUGIN_KEY@-1.0.5</h2>
+        <ul>
+            <li>Fixed manifest file.</li>
+        </ul>       
+	    <h2>@PLUGIN_KEY@-1.0.4</h2>
+        <ul>
+            <li>4.1 XML parameters panels ready.</li>
+		    <li>New Step Chooser ready.</li>
+        </ul>
+	    <h2>@PLUGIN_KEY@-1.0.3</h2>
+        <ul>
+            <li>Plugin converted into the new maven format.</li>
+        </ul>
         <h2>@PLUGIN_KEY@-1.0.2</h2>
-            <ul>
-                <li>4.1 help page format ready.</li>
-            </ul>
-			
+        <ul>
+            <li>4.1 help page format ready.</li>
+        </ul>
 		<h2>@PLUGIN_KEY@-1.0.1</h2>
-            <ul>
-                <li>Bug Fixing.</li>
-            </ul>
-        </div>
-    </body>
+        <ul>
+            <li>Bug Fixing.</li>
+        </ul>
+    </div>
+</body>
 </html>

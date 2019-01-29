@@ -20,7 +20,7 @@ buildscript {
 
 group = 'com.electriccloud'
 description = 'Plugins : EC-Quantify'
-version = '1.0.6'
+version = '1.0.7'
 
 apply plugin: 'flow-gradle-plugin'
 apply plugin: 'license'
